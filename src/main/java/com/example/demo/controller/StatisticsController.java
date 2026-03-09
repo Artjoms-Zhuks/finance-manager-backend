@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 import com.example.demo.service.TransactionService;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,6 +11,7 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
+@CrossOrigin(origins = "http://localhost:3000") // For React
 @RestController
 @RequestMapping("/api/statistics")
 public class StatisticsController {
