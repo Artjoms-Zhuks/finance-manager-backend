@@ -1,4 +1,4 @@
--- Скрипт для инициализации базы данных
+-- Database initialization script
 CREATE TABLE IF NOT EXISTS transaction (
     id BIGSERIAL PRIMARY KEY,
     description VARCHAR(255) NOT NULL,
