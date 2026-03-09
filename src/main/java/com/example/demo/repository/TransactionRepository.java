@@ -21,7 +21,7 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
     }
 
     // Search by part description
-    @Query("SELECT t FROM Transaction t WHERE LOWER(t.description) LIKE LOWER(CONCAT('%', :query, '%'))")
+    @Query("SELECT t FROM Transaction t WHERE LOWER(t.category) LIKE LOWER(CONCAT('%', :query, '%'))")
     List<Transaction> searchByDescription(@Param("query") String query);
 
     // Total amount spent after a certain date
@@ -34,4 +34,8 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
             "WHERE t.createdAt >= :startDate " +
             "GROUP BY t.category")
     List<CategorySum> getExpensesByCategoryAfter(@Param("startDate") LocalDateTime startDate);
+
+    // Extracts all unique category names from the database
+    @Query("SELECT DISTINCT t.category FROM Transaction t")
+    List<String> findAllUniqueCategories();
 }

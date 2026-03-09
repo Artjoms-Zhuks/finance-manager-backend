@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:3000") // For React
@@ -36,5 +37,10 @@ public class StatisticsController {
     @GetMapping("/categories")
     public Map<String, BigDecimal> getCategoriesStats() {
         return service.getExpensesByCategoryThisMonth();
+    }
+
+    @GetMapping("/categories/unique")
+    public List<String> getUniqueCategories() {
+        return service.getUniqueCategories();
     }
 }

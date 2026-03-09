@@ -121,4 +121,9 @@ public class TransactionService {
                 .map(entity -> mapper.map(entity, TransactionDTO.class))
                 .toList();
     }
+
+    // Show all unique category names from the database
+    public List<String> getUniqueCategories() {
+        return repository.findAllUniqueCategories();
+    }
 }

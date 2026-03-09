@@ -1,58 +1,66 @@
-# Finance Manager API
+# 💰 Finance Manager (Fullstack Web App)
 
-A robust and scalable RESTful API built with Spring Boot for tracking personal transactions and managing budgets.
+A complete personal finance tracker with a **Spring Boot 3** backend and a **React.js** frontend.
 
 ## 🚀 Key Features
 
-- **Full CRUD Support**: Create, Read, Update, and Delete transactions.
-- **Data Validation**: Server-side validation for transaction amounts and descriptions.
-- **Automatic Formatting**: Category normalization (auto-uppercase) and description trimming.
-- **Interactive Documentation**: Integrated Swagger UI for easy API testing.
+- **Interactive Dashboard:** Real-time balance updates (Today, Week, Month).
+- **Smart Categories:** Autocomplete suggestions based on transaction history.
+- **Live Search:** Instant filtering of transaction history by description or category.
+- **Full CRUD:** Create, Read, Update, and Delete transactions with a few clicks.
+- **Responsive UI:** Fully optimized for both Desktop and Mobile devices.
 
 ## 🛠 Tech Stack
 
-- **Language:** Java 21
-- **Framework:** Spring Boot 3
-- **Persistence:** Spring Data JPA
-- **Database:** PostgreSQL (Running in Docker)
-- **DevOps:** Docker & Docker Compose
-- **Documentation:** OpenAPI / Swagger UI
+### Backend
 
-## 📋 Prerequisites
+- **Java 21** / **Spring Boot 3**
+- **Spring Data JPA** & **PostgreSQL** (Dockerized)
+- **Swagger/OpenAPI** for interactive documentation.
 
-- **Java 21** or higher
-- **Docker Desktop** installed and running
+### Frontend
+
+- **React.js** (Functional Components & Hooks)
+- **Axios** for seamless API integration.
+- **CSS3 Custom Design** with Responsive Media Queries.
+
+## 📂 Project Structure
+
+The repository is divided into two main parts:
+
+- **`/demo`** — ☕ **Java Backend**: Spring Boot application, REST API, and database logic.
+- **`demo/frontend`** — ⚛️ **React Frontend**: The user interface, state management, and API integration.
 
 ## ⚙️ Getting Started
 
-1. **Clone the repository:**
+### 1. Database & Backend
 
-   ```bash
-   git clone [https://github.com/your-username/finance-manager-backend.git](https://github.com/your-username/finance-manager-backend.git)
-   cd finance-manager-backend
-   ```
-
-2. **Spin up the database:**
-
+```bash
+# Start the PostgreSQL database
 docker-compose up -d
 
-3. **Run the application:**
-
+# Run the Spring Boot application
 ./mvnw spring-boot:run
 
-## API Documentation
 
-Once the application is running, you can access the interactive Swagger UI at:
-👉 http://localhost:8080/swagger-ui/index.html
+```
 
-## 🏗 Project Architecture
+👉 Swagger UI: http://localhost:8080/swagger-ui/index.html
 
-The project follows a layered architecture pattern:
+### 2. Frontend
 
-Controller Layer: Handles HTTP requests and REST mapping.
+cd frontend
 
-Service Layer: Contains business logic and data validation.
+npm install
 
-Repository Layer: Manages database interactions via Spring Data JPA.
+npm start
 
-Entity Layer: Defines the database schema using JPA annotations.
+👉 Web Interface: http://localhost:3000
+
+### 🏗 Project Structure
+
+/src - Java Spring Boot source code (Controller, Service, Repository layers).
+
+/frontend - React.js application source code.
+
+docker-compose.yml - Database configuration.

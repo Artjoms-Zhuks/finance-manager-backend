@@ -9,6 +9,7 @@ import jakarta.validation.constraints.Size;
 
 @Data
 public class TransactionDTO {
+
     @NotBlank(message = "A category can't be empty")
     @Size(min = 3, max = 255, message = "A description must be startet 3 to 255 symbols")
     private String description;
